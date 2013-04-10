@@ -1,0 +1,31 @@
+
+
+>> Codes 
+
+Enquetes
+=======
+
+---ESAM            -Menage 
+---EDS             -Demographie et Sante
+---RGPH            -Ressencement demographique 
+---passation       -Passation de Marches
+-- Esp             -Les priorites  deu Pays
+-- IHPC            -Indices Harmonises  des  Prix a la consommation
+-- INPC            -Indices Nationales  des  Prix  a la consommation
+-- handicapees     -handicapees
+-- Pauvrete        -Pauvrete 
+
+
+Appels d'offres 
+=======
+-- AAO_Location           -Appels d'offres   Location 
+-- AAO_Mobilier           -Appels d'offres   Location 
+-- AAO_informatiques.     -Appels d'offres   informatique 
+
+
+
+
+
+
+
+
