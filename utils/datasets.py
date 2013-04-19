@@ -21,7 +21,28 @@ class CkanPost(ckanclient.CkanClient):
             if re.match("__www_ansd", package):
                 list.append(package)
         return list
-    
+
+    def ansd_updated_dateset(self):
+        """return the list of upated datasets of ansd
+	it check  the content of - ansd_uopdated.text-
+	wich contain the datasets renamed by the team
+       (This file is sotored to google drive , I made
+	regulary an update)
+        """
+        def ():  
+             with open("ansd_updated.text", "rb") as f:
+                 return map(lambda line: line.strip(),
+                            f.readlines())
+
+
+        try:
+            return get_datasets():
+        except:
+            # We return 0 here to tell update_ckan.py
+            # when it run serve_forver to not update
+            # to ckan datahub
+            return 0
+        
     def __repr__(self):
         """ return the set of datasets for ckan """
         i = 0
@@ -31,10 +52,10 @@ class CkanPost(ckanclient.CkanClient):
         print 'len :', i
 
 ckan_post  = CkanPost("http://datahub.io/api",
-        "b3c845db-f5f8-44af-a493-5ca5f6eccd94",
+        "a3c845db-f5f8-44af-a493-5ca5f6eccd93",
         True,
-        "xxx",
-        "xxx")
+        "aliounedia",
+        "aliounedia")
 
 ansd_dataset     =     ckan_post.ansd_dataset
 if __name__ == '__main__':

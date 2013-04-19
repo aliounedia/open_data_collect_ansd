@@ -16,7 +16,7 @@ class FileWrapper:
         
     def get_description(self):
         try: 
-            return self.stream[:500]
+            return self.stream
         except:
             return  self.stream
    
@@ -44,7 +44,7 @@ class FileConverter:
         print >> sys.stdout, fp.read()[:20]
         
         process_pdf(rsrcmgr, device, fp, pagenos,
-                    maxpages=1, password=password,
+                    maxpages=2, password=password,
                     caching=caching, check_extractable=True)
 
         fp.close()

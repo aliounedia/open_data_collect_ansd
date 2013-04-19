@@ -42,13 +42,13 @@ def _link_parser(url, extension, top_level=False):
             _link_parser(link, extension, top_level)
 
         if not os.path.exists(output):
-                os.mkdir(output)
+            os.mkdir(output)
                 
         # if the link  match the extension, so add it to the list
         # of links
         print link
         if link.endswith(extension) and not infile(link):
-            open( "%s/%s" %(output, "link.txt"),
+           open( "%s/%s" %(output, "link.txt"),
                   "a").write("%s\n" % link)
     print 'Ok'
 

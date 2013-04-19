@@ -46,7 +46,7 @@ def grab_file_link(fisrt_url, type):
         next_url = originale + item
         if next_url.endswith(type):
              # Donload file
-             open( 'test.txt',  'a') .write(
+            open( 'test.txt',  'a') .write(
                  '-'*40 + '\n'    + 
                  next_url +  "\n" +
                  fisrt_url +  "\n" + 
@@ -58,12 +58,22 @@ def find_html_link(url_page):
     """
     for htm_page in find_link(url_page, "html"):
         # To get the next page I Add The originale to the item
-        htm_page = originale + htm_page
+        htm_page1 = originale + htm_page
         print >> sys.stdout , "htm_page " , htm_page
-        yield  htm_page
+        yield  htm_page1
         find_html_link(htm_page)
 
-                   
+
+
+def  find_link_recurse(url_page, seen =set()):
+     """ Fin a link recursively , if the url is already in seen
+     skeep it and go to the next url """
+     for url_page  in find_link(url_page, 'html'):
+         if url_page not in seen:
+                seen.append(url_page)
+     
+
+
 def  download_file(url , type):
      """
      Download the Html Page 
@@ -81,7 +91,7 @@ def  download_file(url , type):
          fs.write(buffer)
         
 if __name__== "__main__":
-    for url in  find_html_link('http://www.ansd.sn/'):
+    for url in  find_html_link('http://www.ansd.sn/produist_et_services.html'):
         print grab_file_link(url, '.pdf')
 
     

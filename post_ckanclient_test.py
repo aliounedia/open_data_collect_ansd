@@ -33,10 +33,10 @@ if __name__ == '__main__':
     # http://thedatahub.org/api/rest/package
     # http://datahub.io/group/country-sn
     ckan_post  = CkanPost("http://datahub.io/api",
-        "b3c845db-f5f8-44af-a493-5ca5f6eccd94",
+        "a3c845db-f5f8-44af-a493-5ca5f6eccd93",
         True,
-        "xxx",
-        "xxx")
+        "aliounedia",
+        "aliounedia")
     print 'ckan isntance', ckan_post
     ckan_post.test_post_package_resource()
            

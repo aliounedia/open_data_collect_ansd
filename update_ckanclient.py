@@ -87,7 +87,14 @@ class CkanPost(ckanclient.CkanClient):
                                print >> sys.stdout, "This name is already saved"
                                print dict['name'] 
                                continue
-                          
+                            # check if name is not into the renamed dataset
+                            if dict['name'] in ansd_updated_dataset():
+                               print >> sys.stdout, "This datasets has been renamed\
+                                        "
+                               print dict['name']
+                                
+                               continue
+                           
                             try:
                                 self.package_register_post(dict)
                                 print 'ok'
@@ -97,8 +104,7 @@ class CkanPost(ckanclient.CkanClient):
                                          link   
                                 print e
                                 print dict
-                                continue
-                                        
+                                       
             except Exception , e:
                 print e
 
@@ -126,12 +132,20 @@ if __name__ == '__main__':
     # http://thedatahub.org/api/rest/package
     # http://datahub.io/group/country-sn
     ckan_post  = CkanPost("http://datahub.io/api",
-        "a3c845db-f5f8-44af-a493-5ca5f6eccd93",
+        "b3c845db-f5f8-44af-a493-5ca5f6eccd94",
         True,
-        "aliounedia",
-        "aliounedia")
+        "xxxx",
+        "xxxx")
     print 'ckan isntance', ckan_post
     #ckan_post.test_post_package_resource()
     ckan_post.serve_forever()
            
            
+
+
+         
+
+
+
+          
+          
