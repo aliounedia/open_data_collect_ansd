@@ -33,8 +33,6 @@ class CkanPost(ckanclient.CkanClient):
              with open("ansd_updated.text", "rb") as f:
                  return map(lambda line: line.strip(),
                             f.readlines())
-
-
         try:
             return get_datasets():
         except:

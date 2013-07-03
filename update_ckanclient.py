@@ -84,27 +84,21 @@ class CkanPost(ckanclient.CkanClient):
                             dict['notes']        = desc
                             # ok, try to post data set
                             if dict['name'] in ansd_dataset():
-                               print >> sys.stdout, "This name is already saved"
-                               print dict['name'] 
-                               continue
+                                print >> sys.stdout, "This name is already saved"
+                                print dict['name'] 
+                                continue
                             # check if name is not into the renamed dataset
                             if dict['name'] in ansd_updated_dataset():
-                               print >> sys.stdout, "This datasets has been renamed\
-                                        "
-                               print dict['name']
-                                
-                               continue
-                           
+                                print >> sys.stdout, "This datasets has been renamed\"
+                                print dict['name']
+                                continue
                             try:
                                 self.package_register_post(dict)
                                 print 'ok'
                             except Exception ,e :
                                 print  >> sys.stdout,\
                                 "cannot update dataset ",\
-                                         link   
-                                print e
-                                print dict
-                                       
+                                         link                                         
             except Exception , e:
                 print e
 
@@ -116,8 +110,8 @@ def file_from_link(link):
     Generate a filename from link name
     """
     return link.replace("|", "_").replace("/", "_").\
-           replace("\\", "_").replace("http:" , "").\
-           replace("\n", "").replace("\r", "") + ".txt"
+        replace("\\", "_").replace("http:" , "").\
+        replace("\n", "").replace("\r", "") + ".txt"
 
 def link_finder(data_link_path = "datas/links/link.txt"):
     """

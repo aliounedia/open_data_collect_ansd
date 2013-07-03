@@ -84,21 +84,16 @@ class CkanPost(ckanclient.CkanClient):
                             dict['notes']        = desc
                             # ok, try to post data set
                             if dict['name'] in ansd_dataset():
-                               print >> sys.stdout, "This name is already saved"
-                               print dict['name'] 
-                               continue
-                          
+                                print >> sys.stdout, "This name is already saved"
+                                print dict['name'] 
+                                continue
                             try:
                                 self.package_register_post(dict)
                                 print 'ok'
                             except Exception ,e :
                                 print  >> sys.stdout,\
                                 "cannot update dataset ",\
-                                         link   
-                                print e
-                                print dict
-                                continue
-                                        
+                                         link    
             except Exception , e:
                 print e
 
@@ -110,8 +105,8 @@ def file_from_link(link):
     Generate a filename from link name
     """
     return link.replace("|", "_").replace("/", "_").\
-           replace("\\", "_").replace("http:" , "").\
-           replace("\n", "").replace("\r", "") + ".txt"
+        replace("\\", "_").replace("http:" , "").\
+        replace("\n", "").replace("\r", "") + ".txt"
 
 def link_finder(data_link_path = "datas/links/link.txt"):
     """
@@ -126,10 +121,10 @@ if __name__ == '__main__':
     # http://thedatahub.org/api/rest/package
     # http://datahub.io/group/country-sn
     ckan_post  = CkanPost("http://datahub.io/api",
-        "a3c845db-f5f8-44af-a493-5ca5f6eccd93",
+        "b3c845db-f5f8-44af-a493-5ca5f6eccd94",
         True,
-        "aliounedia",
-        "aliounedia")
+        "xxx",
+        "xxx")
     print 'ckan isntance', ckan_post
     #ckan_post.test_post_package_resource()
     ckan_post.serve_forever()
